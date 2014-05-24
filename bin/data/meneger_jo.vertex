@@ -1,0 +1,14 @@
+uniform vec4 iMouse;
+mat4 RMatrix;
+
+void main() {
+/*    RMatrix = mat4(
+                    vec4( iMouse.x,      iMouse.y,       0.0, 0.0),
+                    vec4( iMouse.y,      iMouse.x,       0.0, 0.0),
+                    vec4( 0.0,           0.0,            1.0, 0.0),
+                    vec4( 0.0,           0.0,            0.0, 1.0)
+                  );
+*/
+    gl_TexCoord[0] = gl_MultiTexCoord0;// * RMatrix; 
+    gl_Position = ftransform();
+} 
